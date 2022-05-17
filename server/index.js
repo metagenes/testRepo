@@ -22,8 +22,7 @@ app.use("/user", userRoutes);
 app.get("/", (req, res) => {
   res.send("APP IS RUNNG");
 });
-// const CONNECTION_URL =
-//   "mongodb+srv://admin:admin@cluster0.zfdny.mongodb.net/memories?retryWrites=true&w=majority";
+const CONNECTION_URL = "mongodb+srv://admin:admin@cluster0.zfdny.mongodb.net/memories?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 8080;
 
 mongoose
@@ -37,3 +36,5 @@ mongoose
   .catch((error) => console.log(error.message));
 
 // moongose.set("useFindAndModify", false);
+
+app.listen(process.env.PORT || 5000)
